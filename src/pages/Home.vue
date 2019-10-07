@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="headbg"></div>
     <div class="ty">
       <div class="flexslider">
         <ul class="slides">
@@ -19,17 +20,7 @@
             </a>
           </li>
         </ul>
-        <ol class="flex-control-nav flex-control-paging">
-          <li>
-            <a>1</a>
-          </li>
-          <li>
-            <a>2</a>
-          </li>
-          <li>
-            <a>3</a>
-          </li>
-        </ol>
+        
       </div>
     </div>
 
@@ -147,31 +138,22 @@
         </ul>
       </div>
     </div>
-
   </div>
 </template>
 <script>
 // import axios from "axios";
 export default {};
 </script>
-<style lang="scss" scoped>
-
-
+<style lang="scss" >
 .flexslider {
   position: relative;
   width: 100%;
+  margin-bottom:0px;
   .slides {
     position: relative;
     z-index: 1;
     overflow: hidden;
     width: 100%;
-  }
-  .flex-control-nav {
-    position: absolute;
-    bottom: 10px;
-    z-index: 2;
-    width: 100%;
-    text-align: center;
   }
   .flex-control-nav {
     position: absolute;
@@ -276,5 +258,10 @@ export default {};
   width: 100%;
   overflow: hidden;
   margin: 0 auto;
+}
+.headbg {
+  width: 100%;
+  height: 63px;
+  background: #fff;
 }
 </style>

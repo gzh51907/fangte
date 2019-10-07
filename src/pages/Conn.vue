@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="headbg"></div>
     <div class="nybn">
       <img src="../assets/images/cbanner.jpg" />
     </div>
@@ -174,5 +175,11 @@
       }
     }
   }
+
+}
+.headbg {
+    width: 100%;
+    height: 63px;
+    background: #FFF;
 }
 </style>

@@ -25,6 +25,7 @@
       max-width: 100%;
       margin: 0 auto;
     }
+    
   </style>
   <title>gongzhugou</title>
 </head>
@@ -42,11 +43,15 @@
 <script>
   $(function () {
     $('.flexslider').flexslider({
-      directionNav: true,
+      // animation:'slide',
+      // directionNav: true,
+      slideshow: true,
+      slideshowSpeed: 3000,
       pauseOnAction: false,
       directionNav: false,
       touch: true,
       move: 1,
+      // controlNav: false,
     });
   })
 </script>
