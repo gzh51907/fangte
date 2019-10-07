@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>gongzhugou</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but gongzhugou doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link href="//cdn.bootcss.com/flexslider/2.6.3/flexslider.min.css" rel="stylesheet">
+  <title>gongzhugou</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but gongzhugou doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/flexslider/2.6.3/jquery.flexslider-min.js"></script>
+<script>
+  $(function () {
+    $('.flexslider').flexslider({
+      directionNav: true,
+      pauseOnAction: false,
+      directionNav: false,
+      touch: true,
+      move: 1,
+    });
+  })
+</script>
+
 </html>
