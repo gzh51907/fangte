@@ -6,7 +6,86 @@
       </a>
       <img src="./assets/images/btn.png" id="toggle-sidebar" class="btn" />
     </div>
-    <router-view/>
+    <div class="sidebar" id="dowebok" v-cloak>
+      <div class="sidebar-wrapper" id="sidebar-wrapper" v-cloak>
+        <div class="navlogo">
+          <a href="#">
+            <img src="./assets/images/navlogo.png" />
+          </a>
+        </div>
+
+        <div class="subNav">
+          <a href="/">网站首页</a>
+        </div>
+
+        <div class="subNav">
+          <router-link to="/gzj">
+            <a>注册</a>
+          </router-link>
+        </div>
+
+        <div class="subNav">
+          <router-link to="/log">
+            <a href>登录</a>
+          </router-link>
+        </div>
+
+        <div class="subNav">
+          <router-link to="/mine">
+            <a href>我的</a>
+          </router-link>
+        </div>
+
+        <div class="subNav">
+          <router-link to="/cart">
+          <el-badge :value="cartlength" class="item">
+            <a href>购物车</a>
+            </el-badge>
+          </router-link>
+        </div>
+
+        <div class="subNav">
+          <a href>品牌中心</a>
+        </div>
+        <div class="subNav">
+          <h1>公主家</h1>
+        </div>
+        <ul class="navContent" style="display: none;">
+          <li>
+            <a href>护肤产品系列</a>
+          </li>
+          <li>
+            <a href>喷雾</a>
+          </li>
+        </ul>
+        <router-link to="/qmc">
+          <div class="subNav">
+            <a>仟佰宠</a>
+          </div>
+        </router-link>
+        <div class="subNav">
+          <a href>公主购</a>
+        </div>
+        <div class="subNav">
+          <a href>荣誉证书</a>
+        </div>
+        <div class="subNav">
+          <h1>品牌资讯</h1>
+        </div>
+        <ul class="navContent" style="display: none;">
+          <li>
+            <a href>集团新闻</a>
+          </li>
+        </ul>
+        <router-link to="/connection">
+          <div class="subNav">
+            <a>联系我们</a>
+          </div>
+        </router-link>
+      </div>
+    </div>
+    <div class="headbg"></div>
+    <router-view />
     <div>
       <div class="ty footer">
         <div class="center">
@@ -31,39 +110,36 @@
       <div class="footbg"></div>
       <ul class="footfix">
         <li>
-          <router-link to="/home">
-          <a href>
+          <!-- <router-link to="/home"> -->
+          <a href="/">
             <img src="./assets/images/side_icon01.png" />
             <h1>首页</h1>
           </a>
-          </router-link>
+          <!-- </router-link> -->
         </li>
         <li>
           <router-link to="/gzj">
-          <a href>
-            <img src="./assets/images/side_icon02.png" />
-            <h1>公主家</h1>
-          </a>
+            <a href>
+              <img src="./assets/images/side_icon02.png" />
+              <h1>公主家</h1>
+            </a>
           </router-link>
-          
         </li>
         <li>
           <router-link to="/qmc">
-          <a href>
-            <img src="./assets/images/side_icon03.png" />
-            <h1>仟佰宠</h1>
-          </a>
+            <a href>
+              <img src="./assets/images/side_icon03.png" />
+              <h1>仟佰宠</h1>
+            </a>
           </router-link>
-     
         </li>
         <li>
           <router-link to="/connection">
-          <a href>
-            <img src="./assets/images/side_icon04.png" />
-            <h1>联系我们</h1>
-          </a>
+            <a href>
+              <img src="./assets/images/side_icon04.png" />
+              <h1>联系我们</h1>
+            </a>
           </router-link>
-          
         </li>
       </ul>
     </div>
@@ -71,16 +147,6 @@
 </template>
 
 <script>
-// $(function() {
-//   $(".flexslider").flexslider({
-//     directionNav: true,
-//     pauseOnAction: false,
-//     directionNav: false,
-//     touch: true,
-//     move: 1
-//   });
-// });
-
 export default {
   name: "app",
   data() {
@@ -109,7 +175,14 @@ export default {
       ]
     };
   },
-  components: {}
+  created(){
+    console.log('store',this.$store)
+  },
+  computed:{
+    cartlength(){
+      return this.$store.state.cartlist.length
+    }
+  }
 };
 </script>
 
@@ -155,8 +228,51 @@ img {
     cursor: pointer;
   }
 }
-
-
+#dowebok {
+  background-color: #292929;
+}
+.sidebar-wrapper {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+}
+.navlogo {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  img {
+    width: 100%;
+  }
+}
+.subNav {
+  cursor: pointer;
+  padding: 10px;
+  a {
+    display: block;
+    line-height: 20px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 15px;
+  }
+  h1 {
+    display: block;
+    line-height: 20px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    padding-right: 15px;
+    background: url(./assets/images/span1.png) no-repeat center right;
+  }
+}
+.navContent li a {
+  display: block;
+  padding: 10px 20px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
 .footer {
   background: #ebebeb;
   border-top: 1px solid #ddd;
@@ -190,9 +306,9 @@ img {
   text-align: center;
 }
 .footbg {
-    width: 100%;
-    height: 60px;
-    background: #FFF;
+  width: 100%;
+  height: 60px;
+  background: #fff;
 }
 .footfix {
   overflow: hidden;
@@ -227,5 +343,11 @@ img {
   li:first-child a {
     border: none;
   }
+}
+.subNav:hover {
+  background: #a44e58;
+}
+[v-cloak] {
+  display: none !important;
 }
 </style>

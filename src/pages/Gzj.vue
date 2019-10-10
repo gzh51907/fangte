@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="headbg"></div>
     <div class="nybn">
       <img src="../assets/images/pbanner.jpg" />
     </div>

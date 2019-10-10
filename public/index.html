@@ -25,7 +25,12 @@
       max-width: 100%;
       margin: 0 auto;
     }
-    
+
+    .headbg {
+      width: 100%;
+      height: 63px;
+      background: #fff;
+    }
   </style>
   <title>gongzhugou</title>
 </head>
@@ -39,9 +44,13 @@
   <!-- built files will be auto injected -->
 </body>
 <script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+<!-- <script src="../src/assets/js/jquery-1.11.3.min.js"></script> -->
 <script src="//cdn.bootcss.com/flexslider/2.6.3/jquery.flexslider-min.js"></script>
+<script src="js/simpler-sidebar.js"></script>
 <script>
+
   $(function () {
+    console.log($('.flexslider'))
     $('.flexslider').flexslider({
       // animation:'slide',
       // directionNav: true,
@@ -53,7 +62,26 @@
       move: 1,
       // controlNav: false,
     });
+
+    $('#dowebok').simplerSidebar({
+      opener: '#toggle-sidebar',
+      sidebar: {
+        align: 'left',
+        width: 200,
+      }
+    });
+    $(".subNav").click(function (ev) {
+      $(this).next(".navContent").slideToggle(500);
+      ev.stopPropagation();
+    })
+    $('.sidebar-wrapper').click(function (ev) {
+      ev.stopPropagation();
+    })
+
+
+
   })
+
 </script>
 
 </html>

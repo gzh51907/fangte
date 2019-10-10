@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="headbg"></div>
     <div class="ty">
       <div class="flexslider">
         <ul class="slides">
@@ -20,7 +19,6 @@
             </a>
           </li>
         </ul>
-        
       </div>
     </div>
 
@@ -148,7 +146,8 @@ export default {};
 .flexslider {
   position: relative;
   width: 100%;
-  margin-bottom:0px;
+  margin-bottom: 0px;
+  border:none;
   .slides {
     position: relative;
     z-index: 1;
@@ -259,9 +258,6 @@ export default {};
   overflow: hidden;
   margin: 0 auto;
 }
-.headbg {
-  width: 100%;
-  height: 63px;
-  background: #fff;
-}
+
+
 </style>
